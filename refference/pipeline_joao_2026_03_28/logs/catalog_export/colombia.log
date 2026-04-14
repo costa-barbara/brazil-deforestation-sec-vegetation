@@ -1,0 +1,96 @@
+📁 Asset does not exist: projects/mapbiomas-public/assets/colombia/lulc/v1
+🛠️ Creating asset of type 'ImageCollection'...
+✅ Created ImageCollection: projects/mapbiomas-public/assets/colombia/lulc/v1
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1985_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1986_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1987_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1988_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1989_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1990_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1991_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1992_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1993_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1994_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1995_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1996_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1997_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1998_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_1999_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2000_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2001_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2002_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2003_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2004_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2005_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2006_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2007_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2008_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2009_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2010_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2011_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2012_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2013_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2014_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2015_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2016_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2017_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2018_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2019_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2020_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2021_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2022_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2023_v2
+[Started] Exporting: projects/mapbiomas-public/assets/colombia/lulc/v1/collection_3_2024_v2
+
+⏳ Waiting for 40 task(s) to finish...
+🚀 colombia:collection_3_1985_v2            | 2026-03-07T12:51:10 | Status: RUNNING
+🚀 colombia:collection_3_1986_v2            | 2026-03-07T12:51:11 | Status: RUNNING
+🚀 colombia:collection_3_1987_v2            | 2026-03-07T12:51:11 | Status: RUNNING
+🚀 colombia:collection_3_1988_v2            | 2026-03-07T12:51:12 | Status: RUNNING
+🚀 colombia:collection_3_1989_v2            | 2026-03-07T12:51:12 | Status: RUNNING
+🚀 colombia:collection_3_1990_v2            | 2026-03-07T12:51:12 | Status: RUNNING
+🚀 colombia:collection_3_1991_v2            | 2026-03-07T12:51:13 | Status: RUNNING
+🚀 colombia:collection_3_1992_v2            | 2026-03-07T12:51:14 | Status: READY
+🚀 colombia:collection_3_1993_v2            | 2026-03-07T12:51:14 | Status: READY
+🚀 colombia:collection_3_1994_v2            | 2026-03-07T12:51:15 | Status: READY
+🚀 colombia:collection_3_1995_v2            | 2026-03-07T12:51:15 | Status: READY
+🚀 colombia:collection_3_1996_v2            | 2026-03-07T12:51:16 | Status: READY
+🚀 colombia:collection_3_1997_v2            | 2026-03-07T12:51:16 | Status: READY
+🚀 colombia:collection_3_1998_v2            | 2026-03-07T12:51:16 | Status: READY
+🚀 colombia:collection_3_1999_v2            | 2026-03-07T12:51:18 | Status: READY
+🚀 colombia:collection_3_2000_v2            | 2026-03-07T12:51:18 | Status: READY
+🚀 colombia:collection_3_2001_v2            | 2026-03-07T12:51:18 | Status: READY
+🚀 colombia:collection_3_2002_v2            | 2026-03-07T12:51:19 | Status: READY
+🚀 colombia:collection_3_2003_v2            | 2026-03-07T12:51:19 | Status: READY
+🚀 colombia:collection_3_2004_v2            | 2026-03-07T12:51:20 | Status: READY
+🚀 colombia:collection_3_2005_v2            | 2026-03-07T12:51:21 | Status: READY
+🚀 colombia:collection_3_2006_v2            | 2026-03-07T12:51:22 | Status: READY
+🚀 colombia:collection_3_2007_v2            | 2026-03-07T12:51:22 | Status: READY
+🚀 colombia:collection_3_2008_v2            | 2026-03-07T12:51:22 | Status: READY
+🚀 colombia:collection_3_2009_v2            | 2026-03-07T12:51:23 | Status: READY
+🚀 colombia:collection_3_2010_v2            | 2026-03-07T12:51:23 | Status: READY
+🚀 colombia:collection_3_2011_v2            | 2026-03-07T12:51:24 | Status: READY
+🚀 colombia:collection_3_2012_v2            | 2026-03-07T12:51:25 | Status: READY
+🚀 colombia:collection_3_2013_v2            | 2026-03-07T12:51:26 | Status: READY
+🚀 colombia:collection_3_2014_v2            | 2026-03-07T12:51:26 | Status: READY
+🚀 colombia:collection_3_2015_v2            | 2026-03-07T12:51:26 | Status: READY
+🚀 colombia:collection_3_2016_v2            | 2026-03-07T12:51:27 | Status: READY
+🚀 colombia:collection_3_2017_v2            | 2026-03-07T12:51:27 | Status: READY
+🚀 colombia:collection_3_2018_v2            | 2026-03-07T12:51:27 | Status: READY
+🚀 colombia:collection_3_2019_v2            | 2026-03-07T12:51:28 | Status: READY
+🚀 colombia:collection_3_2020_v2            | 2026-03-07T12:51:28 | Status: READY
+🚀 colombia:collection_3_2021_v2            | 2026-03-07T12:51:28 | Status: READY
+🚀 colombia:collection_3_2022_v2            | 2026-03-07T12:51:29 | Status: READY
+🚀 colombia:collection_3_2023_v2            | 2026-03-07T12:51:30 | Status: READY
+🚀 colombia:collection_3_2024_v2            | 2026-03-07T12:51:30 | Status: READY
+🚀 colombia:collection_3_1985_v2            | 2026-03-07T12:52:01 | Status: RUNNING
+🚀 colombia:collection_3_1986_v2            | 2026-03-07T12:52:01 | Status: RUNNING
+🚀 colombia:collection_3_1987_v2            | 2026-03-07T12:52:01 | Status: RUNNING
+🚀 colombia:collection_3_1988_v2            | 2026-03-07T12:52:02 | Status: RUNNING
+🚀 colombia:collection_3_1989_v2            | 2026-03-07T12:52:02 | Status: RUNNING
+🚀 colombia:collection_3_1990_v2            | 2026-03-07T12:52:02 | Status: RUNNING
+🚀 colombia:collection_3_1991_v2            | 2026-03-07T12:52:03 | Status: RUNNING
+🚀 colombia:collection_3_1992_v2            | 2026-03-07T12:52:04 | Status: READY
+🚀 colombia:collection_3_1993_v2            | 2026-03-07T12:52:04 | Status: READY
+🚀 colombia:collection_3_1994_v2            | 2026-03-07T12:52:04 | Status: READY
+🚀 colombia:collection_3_1995_v2            | 2026-03-07T12:52:05 | Status: READY

@@ -1,0 +1,68 @@
+Authenticating Earth Engine...
+Traceback (most recent call last):
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/data.py", line 408, in _execute_cloud_call
+    return call.execute(num_retries=num_retries)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 400 when requesting https://earthengine.googleapis.com/v1/projects/mapbiomas-pampa/algorithms?prettyPrint=false&alt=json returned "Project 'projects/mapbiomas-pampa' not found or deleted.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'USER_PROJECT_DENIED', 'domain': 'googleapis.com', 'metadata': {'consumer': 'projects/mapbiomas-pampa', 'service': 'earthengine.googleapis.com', 'containerInfo': 'projects/mapbiomas-pampa'}}]">
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joaosiqueira/Documents/Projects/mapbiomas-pipeline/14_pampa/mapbiomas_pampa_export_datasets_public.py", line 23, in <module>
+    ee.Initialize(project='mapbiomas-pampa')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/_utils.py", line 38, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/__init__.py", line 230, in Initialize
+    raise e
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/__init__.py", line 212, in Initialize
+    ApiFunction.initialize()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/apifunction.py", line 161, in initialize
+    signatures = data.getAlgorithms()
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/data.py", line 1499, in getAlgorithms
+    return _cloud_api_utils.convert_algorithms(_execute_cloud_call(call))
+                                               ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/data.py", line 410, in _execute_cloud_call
+    raise _translate_cloud_exception(e)  # pylint: disable=raise-missing-from
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ee.ee_exception.EEException: Project 'projects/mapbiomas-pampa' not found or deleted.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/data.py", line 408, in _execute_cloud_call
+    return call.execute(num_retries=num_retries)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 400 when requesting https://earthengine.googleapis.com/v1/projects/mapbiomas-pampa/algorithms?prettyPrint=false&alt=json returned "Project 'projects/mapbiomas-pampa' not found or deleted.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'USER_PROJECT_DENIED', 'domain': 'googleapis.com', 'metadata': {'containerInfo': 'projects/mapbiomas-pampa', 'consumer': 'projects/mapbiomas-pampa', 'service': 'earthengine.googleapis.com'}}]">
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joaosiqueira/Documents/Projects/mapbiomas-pipeline/14_pampa/mapbiomas_pampa_export_datasets_public.py", line 27, in <module>
+    ee.Initialize(project='mapbiomas-pampa')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/_utils.py", line 38, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/__init__.py", line 230, in Initialize
+    raise e
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/__init__.py", line 212, in Initialize
+    ApiFunction.initialize()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/apifunction.py", line 161, in initialize
+    signatures = data.getAlgorithms()
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/data.py", line 1499, in getAlgorithms
+    return _cloud_api_utils.convert_algorithms(_execute_cloud_call(call))
+                                               ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/data.py", line 410, in _execute_cloud_call
+    raise _translate_cloud_exception(e)  # pylint: disable=raise-missing-from
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ee.ee_exception.EEException: Project 'projects/mapbiomas-pampa' not found or deleted.

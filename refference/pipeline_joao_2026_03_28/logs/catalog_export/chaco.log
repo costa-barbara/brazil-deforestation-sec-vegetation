@@ -1,0 +1,68 @@
+Authenticating Earth Engine...
+Traceback (most recent call last):
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/data.py", line 408, in _execute_cloud_call
+    return call.execute(num_retries=num_retries)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 403 when requesting https://earthengine.googleapis.com/v1/projects/mapbiomas-chaco/algorithms?prettyPrint=false&alt=json returned "Caller does not have required permission to use project mapbiomas-chaco. Grant the caller the roles/serviceusage.serviceUsageConsumer role, or a custom role with the serviceusage.services.use permission, by visiting https://console.developers.google.com/iam-admin/iam?project=mapbiomas-chaco and then retry. Propagation of the new permission may take a few minutes.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'USER_PROJECT_DENIED', 'domain': 'googleapis.com', 'metadata': {'consoleUrl': 'https://console.developers.google.com/iam-admin/iam?project=mapbiomas-chaco', 'containerInfo': 'mapbiomas-chaco', 'service': 'earthengine.googleapis.com', 'consumer': 'projects/mapbiomas-chaco'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'Caller does not have required permission to use project mapbiomas-chaco. Grant the caller the roles/serviceusage.serviceUsageConsumer role, or a custom role with the serviceusage.services.use permission, by visiting https://console.developers.google.com/iam-admin/iam?project=mapbiomas-chaco and then retry. Propagation of the new permission may take a few minutes.'}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Google developer console IAM admin', 'url': 'https://console.developers.google.com/iam-admin/iam?project=mapbiomas-chaco'}]}]">
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joaosiqueira/Documents/Projects/mapbiomas-pipeline/12_chaco/mapbiomas_chaco_export_datasets_public.py", line 23, in <module>
+    ee.Initialize(project='mapbiomas-chaco')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/_utils.py", line 38, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/__init__.py", line 230, in Initialize
+    raise e
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/__init__.py", line 212, in Initialize
+    ApiFunction.initialize()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/apifunction.py", line 161, in initialize
+    signatures = data.getAlgorithms()
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/data.py", line 1499, in getAlgorithms
+    return _cloud_api_utils.convert_algorithms(_execute_cloud_call(call))
+                                               ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/data.py", line 410, in _execute_cloud_call
+    raise _translate_cloud_exception(e)  # pylint: disable=raise-missing-from
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ee.ee_exception.EEException: Caller does not have required permission to use project mapbiomas-chaco. Grant the caller the roles/serviceusage.serviceUsageConsumer role, or a custom role with the serviceusage.services.use permission, by visiting https://console.developers.google.com/iam-admin/iam?project=mapbiomas-chaco and then retry. Propagation of the new permission may take a few minutes.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/data.py", line 408, in _execute_cloud_call
+    return call.execute(num_retries=num_retries)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 403 when requesting https://earthengine.googleapis.com/v1/projects/mapbiomas-chaco/algorithms?prettyPrint=false&alt=json returned "Caller does not have required permission to use project mapbiomas-chaco. Grant the caller the roles/serviceusage.serviceUsageConsumer role, or a custom role with the serviceusage.services.use permission, by visiting https://console.developers.google.com/iam-admin/iam?project=mapbiomas-chaco and then retry. Propagation of the new permission may take a few minutes.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'USER_PROJECT_DENIED', 'domain': 'googleapis.com', 'metadata': {'containerInfo': 'mapbiomas-chaco', 'service': 'earthengine.googleapis.com', 'consumer': 'projects/mapbiomas-chaco', 'consoleUrl': 'https://console.developers.google.com/iam-admin/iam?project=mapbiomas-chaco'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'Caller does not have required permission to use project mapbiomas-chaco. Grant the caller the roles/serviceusage.serviceUsageConsumer role, or a custom role with the serviceusage.services.use permission, by visiting https://console.developers.google.com/iam-admin/iam?project=mapbiomas-chaco and then retry. Propagation of the new permission may take a few minutes.'}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Google developer console IAM admin', 'url': 'https://console.developers.google.com/iam-admin/iam?project=mapbiomas-chaco'}]}]">
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joaosiqueira/Documents/Projects/mapbiomas-pipeline/12_chaco/mapbiomas_chaco_export_datasets_public.py", line 27, in <module>
+    ee.Initialize(project='mapbiomas-chaco')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/_utils.py", line 38, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/__init__.py", line 230, in Initialize
+    raise e
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/__init__.py", line 212, in Initialize
+    ApiFunction.initialize()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/apifunction.py", line 161, in initialize
+    signatures = data.getAlgorithms()
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/data.py", line 1499, in getAlgorithms
+    return _cloud_api_utils.convert_algorithms(_execute_cloud_call(call))
+                                               ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/joaosiqueira/.local/pipx/venvs/earthengine-api/lib/python3.13/site-packages/ee/data.py", line 410, in _execute_cloud_call
+    raise _translate_cloud_exception(e)  # pylint: disable=raise-missing-from
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ee.ee_exception.EEException: Caller does not have required permission to use project mapbiomas-chaco. Grant the caller the roles/serviceusage.serviceUsageConsumer role, or a custom role with the serviceusage.services.use permission, by visiting https://console.developers.google.com/iam-admin/iam?project=mapbiomas-chaco and then retry. Propagation of the new permission may take a few minutes.

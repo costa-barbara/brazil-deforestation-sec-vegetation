@@ -1,0 +1,26 @@
+
+[?] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_pasture_detection_year_v1
+[?] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_urban_epochs_v1
+
+[x] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_pasture_last_time_mapped_v1
+[x] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_urban_transitions_v1
+
+[o] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_integration_v1
+[o] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_deforestation_secondary_vegetation_v1
+
+[o] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_irrigated_agriculture_v1
+[o] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_mined_substance_v1
+[o] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_pasture_gpp_v1
+[o] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_pasture_vigor_v2
+[o] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_urban_height_above_nearest_drainage_v1
+[o] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_urban_risk_v1
+[o] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_urban_slope_v1
+[o] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_urban_slum_v1
+[o] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_urban_tracts_v1
+[o] projects/mapbiomas-public/assets/brazil/water/collection3/mapbiomas_water_annual_water_coverage_v1
+
+[] projects/mapbiomas-public/assets/brazil/soil/collection2/mapbiomas_soil_collection2_granulometry_sand_percentage
+[] projects/mapbiomas-public/assets/brazil/soil/collection2/mapbiomas_soil_collection2_granulometry_clay_percentage
+[] projects/mapbiomas-public/assets/brazil/soil/collection2/mapbiomas_soil_collection2_granulometry_silt_percentage
+
+[o] projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_quality_v1
