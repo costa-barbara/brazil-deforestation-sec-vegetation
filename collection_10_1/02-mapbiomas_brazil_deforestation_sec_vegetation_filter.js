@@ -1,22 +1,10 @@
 /*
-  v00 - sem filtros
-  v01 - filtro de 1 ha acumulado na série
-  v02 - filtro de 3 ha acumulado na série
-  v03 - filtro de 0.5 ha no ano e 1 ha acumulado na série
-  v04 - filtro de 0.5 ha no ano e 3 ha acumulado na série
 
-  v05 - filtro de 1 ha em cada ano da série
-  v06 - filtro de 3 ha em cada ano da série
-
-  v07 - filtro de 1ha no ultimo ano + filtro de 1 ha acumulado na série
-  v08 - filtro de 1ha no ultimo ano + filtro de 3 ha acumulado na série
-  v09 - filtro de 1ha no ultimo ano + filtro de 0.5 ha no ano e 1 ha acumulado na série
-  v10 - filtro de 1ha no ultimo ano + filtro de 0.5 ha no ano e 3 ha acumulado na série
-  
   Conversão para pixels de 30 m (cada pixel = 900 m² = 0,09 ha):
-  1 ha ≈ 11,11 pixels → 12 pixels = 1,08 ha
-  3 ha ≈ 33,33 pixels → 34 pixels = 3,06 ha
-  0,5 ha ≈ 5,56 pixels → 6 pixels = 0,54 ha
+  1 ha ≈ 11 pixels → 0,99 ha
+  2 ha ≈ 22 pixels → 1,98 ha
+  3 ha ≈ 33 pixels → 2,97 ha
+
 */
 
 
@@ -93,7 +81,9 @@ var accumulated_secondary_count = secondary_mask
     maxSize: maxSize,
     eightConnected: true
   });
-print('accumulated_secondary_count',accumulated_secondary_count)
+  
+print('accumulated_secondary_count',accumulated_secondary_count);
+
 var annual_secondary_count = secondary_mask
   .selfMask()
   .connectedPixelCount({
@@ -113,133 +103,138 @@ Map.addLayer(annual_secondary_count.reduce(ee.Reducer.max()),{min:0,max:34},'ann
 
 // --- --- matriz de versões para exportar
 var matrix_versions = [
-  // {
-  //   name:'v01',
-  //   description:'v01 - filtro de 1 ha (12 pixels) acumulado na série', 
-  //   accumulated_deforestation_size_filter: 12, 
-  //   accumulated_secondary_size_filter:12,
-  // },
-  // {
-  //   name:'v02',
-  //   description:'v02 - filtro de 3 ha (34 pixels) acumulado na série', 
-  //   accumulated_deforestation_size_filter: 34, 
-  //   accumulated_secondary_size_filter:34,
-  // },
-  // {
-  //   name:'v03',
-  //   description:'v03 - filtro de 0.5 ha (6 pixels) no ano e 1 ha (12 pixels) acumulado na série', 
-  //   accumulated_deforestation_size_filter: 12, 
-  //   accumulated_secondary_size_filter:12,
-  //   annual_deforestation_size_filter: 6, 
-  //   annual_secondary_size_filter:6
-  // },
-  // {
-  //   name:'v04',
-  //   description:'v04 - filtro de 0.5 ha (6 pixels) no ano e 3 ha (34 pixels) acumulado na série', 
-  //   accumulated_deforestation_size_filter: 34, 
-  //   accumulated_secondary_size_filter:34,
-  //   annual_deforestation_size_filter: 6, 
-  //   annual_secondary_size_filter:6
-  // },
+  {
+    name:'v01',
+    description:'v01 - Baseado nas Coleções 6 a 8: Remove manchas totais da série <1 ha em todas as classes', 
+    annual_deforestation_size_filter: 11, 
+    annual_secondary_size_filter: 11
+    
+  },
+  
+  {
+    name:'v02',
+    description:'v02 - Baseado na Coleção 9: Remove manchas anuais de desmatamento <1 ha, manchas de veg. secundária acumuladas na série <2 ha na série e <2 ha no último ano em todas as classes (ATBD Col 09: regra Amazônia)', 
+    annual_deforestation_size_filter: 11, 
+    accumulated_secondary_size_filter: 22,
+    last_year_size_filter: 22
+  },
+  
+  {
+    name:'v03',
+    description:'v03 - Baseado na Coleção 9: Remove manchas anuais de desmatamento <1 ha, manchas de veg. secundária  acumuladas na série <1 ha na série e <1 ha no último ano em todas as classes (ATBD Col 09: regra Caatinga e Mata Atlântica)', 
+    annual_deforestation_size_filter: 11, 
+    accumulated_secondary_size_filter: 11,
+    last_year_size_filter: 11
+  },
+
+  {
+    name:'v04',
+    description:'v04 - Baseado na Coleção 9: Remove manchas anuais de desmatamento <1 ha, manchas de veg. secundária acumuladas na série <1 ha na série e <3ha no último ano em todas as classes (ATBD Col 09: regra Pantanal)', 
+    annual_deforestation_size_filter: 11, 
+    accumulated_secondary_size_filter: 11,
+    last_year_size_filter: 33
+  },
+
   {
     name:'v05',
-    description:'v05 - filtro de 1 ha em cada ano da série',
-    annual_deforestation_size_filter:12,
+    description:'v05 - Baseado na Coleção 9: Remove manchas anuais de desmatamento <1 ha, manchas de veg. secundária acumuladas na série <3 ha na série e <3ha no último ano em todas as classes (ATBD Col 09: regra Cerrado e Pampa)', 
+    annual_deforestation_size_filter: 11, 
+    accumulated_secondary_size_filter: 33,
+    last_year_size_filter: 33
   },
+
   {
     name:'v06',
-    description:'v06 - filtro de 3 ha em cada ano da série',
-    annual_deforestation_size_filter:34,
+    description:'v06 - Baseado na Coleção 10: Remove manchas acumuladas <3 ha e <3 ha no último ano em em todas as classes', 
+    accumulated_deforestation_size_filter: 33,
+    accumulated_secondary_size_filter: 33,
+    last_year_size_filter: 33
   },
+
   {
     name:'v07',
-    description:'v07 - filtro de 1ha no ultimo ano + filtro de 1 ha acumulado na série',
-    last_year_size_filter:12,
-    accumulated_deforestation_size_filter: 12, 
-    accumulated_secondary_size_filter:12,
+    description:'v07 - Proposta Coleção 10.1: Remove manchas acumuladas <1 ha e <3 ha no último ano em em todas as classes', 
+    accumulated_deforestation_size_filter: 11,
+    accumulated_secondary_size_filter: 11,
+    last_year_size_filter: 33
   },
-  {
-    name:'v08',
-    description:'v08 - filtro de 1ha no ultimo ano + filtro de 3 ha acumulado na série',
-    last_year_size_filter:12,
-    accumulated_deforestation_size_filter: 34, 
-    accumulated_secondary_size_filter: 34,
-  },
-  {
-    name:'v09',
-    description:'v09 - filtro de 1ha no ultimo ano + filtro de 0.5 ha no ano e 1 ha acumulado na série',
-    last_year_size_filter:12,
-    accumulated_deforestation_size_filter: 12, 
-    accumulated_secondary_size_filter:12,
-    annual_deforestation_size_filter: 6, 
-    annual_secondary_size_filter:6
-  },
-  {
-    name:'v10',
-    description:'v10 - filtro de 1ha no ultimo ano + filtro de 0.5 ha no ano e 3 ha acumulado na série',
-    last_year_size_filter:12,
-    accumulated_deforestation_size_filter: 34, 
-    accumulated_secondary_size_filter:34,
-    annual_deforestation_size_filter: 6, 
-    annual_secondary_size_filter:6
-  },
+  
 ];
 
 matrix_versions.forEach(function(obj){
   
   var version_filter = no_filter;
-  // print('n',obj.name)
-  if(obj.last_year_size_filter){
-    var last_year = version_filter.slice(-1)
-    version_filter = version_filter.slice(0,-1);
-    last_year = last_year.where(annual_deforestation_count.slice(-1).lte(obj.last_year_size_filter).and(last_year.eq(3).or(last_year.eq(5))), 7);
-    last_year = last_year.where(annual_deforestation_count.slice(-1).lte(obj.last_year_size_filter).and(last_year.eq(4).or(last_year.eq(6))), 7);
-    // print('last_year_size_filter',version_filter,last_year)
-    
-    version_filter = version_filter.addBands(last_year);
-  }
+  
+  // 1. Filtro de Desmatamento Acumulado (Classes 4 e 6)
   if(obj.accumulated_deforestation_size_filter){
-    version_filter = version_filter.where(accumulated_deforestation_count.lte(obj.accumulated_deforestation_size_filter).and(version_filter.eq(4)), 7);
-    version_filter = version_filter.where(accumulated_deforestation_count.lte(obj.accumulated_deforestation_size_filter).and(version_filter.eq(6)), 7);
-    // print('accumulated_deforestation_size_filter',version_filter)
+    var mask_acc_def = accumulated_deforestation_count.lte(obj.accumulated_deforestation_size_filter)
+                          .and(version_filter.eq(4).or(version_filter.eq(6)));
+
+    version_filter = version_filter.where(mask_acc_def, 8);
   }
+  
+  // 2. Filtro de Vegetação Secundária Acumulada (Classes 3 e 5)
   if(obj.accumulated_secondary_size_filter){
-    version_filter = version_filter.where(accumulated_secondary_count.lte(obj.accumulated_secondary_size_filter),7);
-    version_filter = version_filter.where(version_filter.eq(3), 7);
-    version_filter = version_filter.where(accumulated_secondary_count.lte(obj.accumulated_secondary_size_filter),7);
-    version_filter = version_filter.where(version_filter.eq(5), 7);
-    // print('accumulated_secondary_size_filter',version_filter,'accumulated_secondary_count',accumulated_secondary_count)
+    var mask_acc_sec = accumulated_secondary_count.lte(obj.accumulated_secondary_size_filter)
+                          .and(version_filter.eq(3).or(version_filter.eq(5)));
+                          
+    version_filter = version_filter.where(mask_acc_sec, 8);
   }    
+  
+  // 3. Filtro de Desmatamento Anual (Classes 4 e 6)
   if(obj.annual_deforestation_size_filter){
-    version_filter = version_filter.where(annual_deforestation_count.select(version_filter.bandNames()).lte(obj.annual_deforestation_size_filter),7);
-    version_filter = version_filter.where(version_filter.eq(4), 7);
-    version_filter = version_filter.where(annual_deforestation_count.select(version_filter.bandNames()).lte(obj.annual_deforestation_size_filter),7);
-    version_filter = version_filter.where(version_filter.eq(6), 7);
-    // print('annual_secondary_size_filter',version_filter)
+    var mask_ann_def = annual_deforestation_count.lte(obj.annual_deforestation_size_filter)
+                          .and(version_filter.eq(4).or(version_filter.eq(6)));
+                          
+    version_filter = version_filter.where(mask_ann_def, 8);
   }
 
+  // 4. Filtro de Vegetação Secundária Anual (Classes 3 e 5) - Corrigido as classes!
   if(obj.annual_secondary_size_filter){
-    version_filter = version_filter.where(annual_secondary_count.lte(obj.annual_secondary_size_filter).and(version_filter.eq(4)), 7);
-    version_filter = version_filter.where(annual_secondary_count.lte(obj.annual_secondary_size_filter).and(version_filter.eq(6)), 7);
-    // print('last_year_size_filter',version_filter)
+    var mask_ann_sec = annual_secondary_count.lte(obj.annual_secondary_size_filter)
+                          .and(version_filter.eq(3).or(version_filter.eq(5)));
+                          
+    version_filter = version_filter.where(mask_ann_sec, 8);
+  }
+  
+  // 5. Filtro do último ano da série
+  if(obj.last_year_size_filter){
+    var last_year = version_filter.slice(-1);
+    var remainder = version_filter.slice(0, -1); // Mantém o resto da série seguro
+    
+    // Pegamos as contagens específicas apenas da última banda
+    var def_last_year_count = annual_deforestation_count.slice(-1);
+    var sec_last_year_count = annual_secondary_count.slice(-1);
+
+    // Filtra Desmatamento (4 e 6) no último ano
+    var mask_def_last = def_last_year_count.lte(obj.last_year_size_filter)
+                          .and(last_year.eq(4).or(last_year.eq(6)));
+    last_year = last_year.where(mask_def_last, 8);
+
+    // Filtra Vegetação Secundária (3 e 5) no último ano usando a contagem correta
+    var mask_sec_last = sec_last_year_count.lte(obj.last_year_size_filter)
+                          .and(last_year.eq(3).or(last_year.eq(5)));
+    last_year = last_year.where(mask_sec_last, 8);
+    
+    // Junta novamente com a série
+    version_filter = remainder.addBands(last_year);
   }
   
   
   // --- - plot 3
-  Map.addLayer(version_filter, vis_def_sec_veg,  obj.name + 'version_filter ');
-  // Map.addLayer(accumulated_deforestation_count.lte(obj.accumulated_deforestation_size_filter).selfMask(), {min: 0,max: 1,format: 'png',palette: ['#000000','#0c003d']}, obj.name + "deforestation_count !zoom depend",false,0.4);
-  // Map.addLayer(accumulated_secondary_mask_count.lte(obj.accumulated_secondary_size_filter).selfMask(), {min: 0,max: 1,format: 'png',palette: ['#000000','#0c003d']}, obj.name + "secondary_mask_count !zoom depend",false,0.4);
+  Map.addLayer(version_filter, vis_def_sec_veg,  obj.name + ' version_filter', false);
   
   var properties = {
-    version:obj.name,
-    description:'WS_IPAM-' + obj.version  + '-' + obj.description,
+    version: obj.name,
+    description: obj.description, 
     territory: "BRAZIL",
     collection_id: 10.1,
-    source: "GT desmatamento",
-    theme: "Desmatamento"
+    source: "GT Desmatamento",
+    theme: "Desmatamento",
+    cadence:'3'
   };
   
-  exportPerCarta (version_filter,asset,obj.name,properties);
+  exportPerCarta(version_filter, asset, obj.name, properties);
   
 });
 
@@ -248,7 +243,7 @@ function exportPerCarta (image,assetOutput,name,properties){
  
   properties = properties === undefined ? {} : properties;
  
-   // --- --- --- Export
+  // --- --- --- Export
   
   var assetGrids = 'projects/mapbiomas-workspace/AUXILIAR/cartas';
   var grids = ee.FeatureCollection(assetGrids);
@@ -269,14 +264,15 @@ function exportPerCarta (image,assetOutput,name,properties){
   
           Export.image.toAsset({
               image: image.set(properties),
-              description:  'WSilva. ' + 'def_sec_vegetation-'+ name + '-' + gridName,
+              description:  'WSilva-' + 'def_sec_vegetation-'+ name + '-' + gridName,
               assetId: assetOutput + "/" + name + '-' + gridName,
               pyramidingPolicy: {
                   '.default': 'mode'
               },
               region: grid.geometry().bounds(),
               scale: 30,
-              maxPixels: 1e13
+              maxPixels: 1e13,
+              overwrite:true
           });
       }
   );
