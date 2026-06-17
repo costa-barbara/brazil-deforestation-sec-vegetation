@@ -14,10 +14,12 @@ var palette = require('users/mapbiomas/modules:Palettes.js').get('brazil');
 
 // assets
 
-var asset = 'projects/ee-ipam/assets/MAPBIOMAS/LULC/DEFORESTATION/col10_1_def_sec_vegetation';
-// var asset = 'projects/mapbiomas-brazil/assets/LAND-COVER/COLLECTION-11/DEFORESTATION/deforestation-secondary-vegetation';
+var asset = 'projects/mapbiomas-brazil/assets/LAND-COVER/COLLECTION-11/DEFORESTATION/deforestation-secondary-vegetation';
 var coll = ee.ImageCollection(asset);
 var no_filter = coll.filter(ee.Filter.eq('version', 'v00')).mosaic();
+
+var assetOutput = 'projects/mapbiomas-brazil/assets/LAND-COVER/COLLECTION-11/DEFORESTATION/deforestation-secondary-vegetation-ft';
+
 
 print('coll',coll);
 print('no_filter',no_filter);
@@ -256,7 +258,7 @@ matrix_versions.forEach(function(obj){
     cadence:'3'
   };
   
-  exportPerCarta(version_filter, asset, obj.name, properties);
+  exportPerCarta(version_filter, assetOutput, obj.name, properties);
   
 });
 
